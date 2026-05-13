@@ -1,0 +1,36 @@
+:root {
+  /* Surfaces */
+  --surface-base:        #0A0A0B;
+  --surface-raised:      #111113;
+  --surface-overlay:     #16161A;
+  --surface-hover:       #1C1C21;
+
+  /* Borders */
+  --border-subtle:       #1F1F24;
+  --border-default:      #2A2A30;
+  --border-strong:       #3A3A42;
+
+  /* Text */
+  --text-primary:        #E8E8EC;
+  --text-secondary:      #9A9AA3;
+  --text-tertiary:       #5C5C66;
+  --text-disabled:       #3A3A42;
+
+  /* Signal — one accent, electric */
+  --signal:              #7FFF6B;
+  --signal-dim:          #4A8F40;
+  --signal-bg:           rgba(127, 255, 107, 0.08);
+
+  /* Danger / warning / info */
+  --danger:              #FF5C5C;
+  --danger-bg:           rgba(255, 92, 92, 0.08);
+  --warning:             #FFB546;
+  --warning-bg:          rgba(255, 181, 70, 0.08);
+  --info:                #5CB8FF;
+  --info-bg:             rgba(92, 184, 255, 0.08);
+
+  /* Threat score gradient */
+  --threat-0:            #4A8F40;
+  --threat-50:           #FFB546;
+  --threat-100:          #FF5C5C;
+}
