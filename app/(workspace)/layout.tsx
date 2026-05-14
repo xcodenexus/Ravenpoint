@@ -7,6 +7,7 @@ import {
   Layers, Settings, Clock, Brain, X, ChevronRight, Search,
 } from 'lucide-react'
 import { CommandPalette } from '@/components/ui'
+import { AnalystPanel } from '@/components/analyst/analyst-panel'
 import type { PaletteItem } from '@/components/ui'
 import { useUiStore } from '@/lib/stores/ui'
 import { useEntities } from '@/lib/queries/useEntities'
@@ -237,11 +238,8 @@ export default function WorkspaceLayout({ children }: { children: React.ReactNod
                   <X size={13} />
                 </button>
               </div>
-              <div className="flex-1 flex items-center justify-center p-6">
-                <p className="font-sans text-[13px] text-text-tertiary text-center leading-relaxed">
-                  AI analysis panel.<br />
-                  <span className="text-text-secondary">Implemented in Session 5.</span>
-                </p>
+              <div className="flex-1 min-h-0 overflow-hidden">
+                <AnalystPanel />
               </div>
             </aside>
           )}
@@ -259,7 +257,7 @@ export default function WorkspaceLayout({ children }: { children: React.ReactNod
           {entities.length} entities · {investigations.length} investigations
         </span>
         <span className="w-px h-3 bg-border-default" />
-        <span className="font-mono text-[10px] text-text-tertiary">v0.4.0</span>
+        <span className="font-mono text-[10px] text-text-tertiary">v0.7.0</span>
       </footer>
 
       {/* ── Command Palette (wired to real data) ── */}
