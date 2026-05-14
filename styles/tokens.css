@@ -33,4 +33,11 @@
   --threat-0:            #4A8F40;
   --threat-50:           #FFB546;
   --threat-100:          #FF5C5C;
+
+  /* Motion */
+  --duration-micro:      120ms;
+  --duration-default:    180ms;
+  --duration-modal:      240ms;
+  --ease-enter:          cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-exit:           ease-out;
 }

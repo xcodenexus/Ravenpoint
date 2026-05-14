@@ -35,11 +35,15 @@
   /* Signal */
   --color-signal:           var(--signal);
   --color-signal-dim:       var(--signal-dim);
+  --color-signal-bg:        var(--signal-bg);
 
   /* Semantic */
   --color-danger:           var(--danger);
+  --color-danger-bg:        var(--danger-bg);
   --color-warning:          var(--warning);
+  --color-warning-bg:       var(--warning-bg);
   --color-info:             var(--info);
+  --color-info-bg:          var(--info-bg);
 
   /* Threat score */
   --color-threat-low:       var(--threat-0);
@@ -51,6 +55,41 @@
   --radius-xs:   2px;
   --radius-sm:   4px;
   --radius-md:   6px;
+
+  /* Animations */
+  --animate-shimmer:        shimmer 1.6s linear infinite;
+  --animate-cursor-blink:   cursor-blink 1s step-end infinite;
+}
+
+/* Keyframes */
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.97) translateY(-2px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes slide-up-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 /* Base */
