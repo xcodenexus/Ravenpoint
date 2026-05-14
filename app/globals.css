@@ -92,6 +92,36 @@
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
+/* React Flow dark theme overrides */
+.react-flow {
+  --xy-background-color:                       var(--surface-base);
+  --xy-controls-button-background-color:        var(--surface-raised);
+  --xy-controls-button-background-color-hover:  var(--surface-hover);
+  --xy-controls-button-color:                   var(--text-tertiary);
+  --xy-controls-button-color-hover:             var(--text-primary);
+  --xy-controls-button-border-color:            var(--border-default);
+  --xy-controls-box-shadow:                     none;
+  --xy-minimap-background-color:                var(--surface-raised);
+  --xy-minimap-mask-background-color:           var(--surface-base);
+  --xy-edge-stroke:                             var(--border-strong);
+  --xy-handle-background-color:                 transparent;
+  --xy-handle-border-color:                     transparent;
+  --xy-selection-background-color:              color-mix(in srgb, var(--signal) 10%, transparent);
+  --xy-selection-border-color:                  var(--signal);
+}
+.react-flow__controls-button {
+  border-color:  var(--border-default) !important;
+  background:    var(--surface-raised) !important;
+  color:         var(--text-tertiary) !important;
+  fill:          var(--text-tertiary) !important;
+  border-radius: 0 !important;
+}
+.react-flow__controls-button:hover {
+  background: var(--surface-hover) !important;
+  color:      var(--text-primary) !important;
+  fill:       var(--text-primary) !important;
+}
+
 /* Base */
 html {
   color-scheme: dark;

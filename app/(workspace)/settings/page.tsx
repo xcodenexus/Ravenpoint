@@ -4,20 +4,23 @@ import React, { useState } from 'react'
 import { Tabs, Input, Button } from '@/components/ui'
 
 const SHORTCUTS = [
-  { key: '⌘K',    action: 'Open command palette'     },
-  { key: '⌘J',    action: 'Toggle AI Analyst panel'  },
-  { key: 'j / ↓', action: 'Navigate table row down'  },
-  { key: 'k / ↑', action: 'Navigate table row up'    },
-  { key: 'x',     action: 'Select / deselect row'    },
-  { key: '↵',     action: 'Open selected row'        },
-  { key: 'Esc',   action: 'Close dialog or palette'  },
+  { key: '⌘K',    action: 'Open command palette'            },
+  { key: '⌘J',    action: 'Toggle AI Analyst panel'         },
+  { key: 'j / ↓', action: 'Navigate table row down'         },
+  { key: 'k / ↑', action: 'Navigate table row up'           },
+  { key: '↵',     action: 'Open selected row / navigate'    },
+  { key: 'Esc',   action: 'Close dialog, palette, or panel' },
+  { key: '⌘C',    action: 'Copy entity value'               },
+  { key: 'g e',   action: 'Go to Sessions list'             },
+  { key: 'g g',   action: 'Go to Graph view'                },
 ]
 
 const API_KEY_FIELDS = [
-  { label: 'VirusTotal API Key',    placeholder: 'vt-api-…'     },
-  { label: 'Shodan API Key',        placeholder: 'shodan-…'     },
-  { label: 'AbuseIPDB API Key',     placeholder: 'abuseipdb-…' },
-  { label: 'Recorded Future Token', placeholder: 'rf-token-…'  },
+  { label: 'Anthropic API Key',     placeholder: 'sk-ant-…',    env: 'ANTHROPIC_API_KEY'  },
+  { label: 'VirusTotal API Key',    placeholder: 'vt-api-…',    env: 'VIRUSTOTAL_API_KEY' },
+  { label: 'Shodan API Key',        placeholder: 'shodan-…',    env: 'SHODAN_API_KEY'     },
+  { label: 'AbuseIPDB API Key',     placeholder: 'abuseipdb-…', env: 'ABUSEIPDB_API_KEY'  },
+  { label: 'Recorded Future Token', placeholder: 'rf-token-…',  env: 'RF_API_TOKEN'       },
 ]
 
 const DATA_SOURCES = [
@@ -40,7 +43,7 @@ const STACK_INFO = [
 function ApiKeysTab() {
   return (
     <div className="flex flex-col gap-6 max-w-lg">
-      {API_KEY_FIELDS.map(({ label, placeholder }) => (
+      {API_KEY_FIELDS.map(({ label, placeholder, env }) => (
         <div key={label}>
           <div className="font-sans text-[11px] text-text-secondary mb-2">{label}</div>
           <div className="flex gap-2">
@@ -53,6 +56,7 @@ function ApiKeysTab() {
             />
             <Button variant="secondary" size="sm">Save</Button>
           </div>
+          <div className="font-mono text-[10px] text-text-tertiary mt-1">env: {env}</div>
         </div>
       ))}
     </div>
@@ -102,7 +106,7 @@ function AboutTab() {
     <div className="flex flex-col gap-4 max-w-md">
       <div className="flex flex-col gap-1">
         <span className="font-mono text-[22px] text-signal tracking-wide">RAVENPOINT</span>
-        <span className="font-sans text-[13px] text-text-tertiary">v0.4.0 — Session 4 build</span>
+        <span className="font-sans text-[13px] text-text-tertiary">v0.9.0 — Session 9 build</span>
       </div>
       <div className="flex flex-col gap-2 border-t border-border-subtle pt-4">
         {STACK_INFO.map(([k, v]) => (
