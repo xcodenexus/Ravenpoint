@@ -1,4 +1,7 @@
+import { redirect } from 'next/navigation'
+
 export default function Home() {
+  redirect('/sessions')
   return (
     <main className="min-h-screen bg-surface-base flex items-center justify-center px-8">
       <div className="w-full max-w-md space-y-10">
