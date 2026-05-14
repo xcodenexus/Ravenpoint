@@ -1,0 +1,35 @@
+{
+  "email": "admin@darkmail.cc",
+  "breachCount": 2,
+  "pasteCount": 3,
+  "exposedPasswords": true,
+  "exposedFinancial": false,
+  "breaches": [
+    {
+      "name": "ExfilForumDB",
+      "title": "Exfil Underground Forum",
+      "domain": "exfil-forum.onion",
+      "breachDate": "2024-03-15",
+      "addedDate": "2024-04-02T00:00:00Z",
+      "dataClasses": ["Email addresses", "Usernames", "IP addresses", "Passwords"],
+      "pwnCount": 284721,
+      "description": "Underground hacking forum database exposed by rival threat actor.",
+      "isVerified": true,
+      "isFabricated": false,
+      "isSensitive": true
+    },
+    {
+      "name": "DarkLeaks2024",
+      "title": "DarkLeaks Compilation 2024",
+      "domain": "darkleaks.cc",
+      "breachDate": "2024-01-01",
+      "addedDate": "2024-01-18T00:00:00Z",
+      "dataClasses": ["Email addresses", "Passwords", "Usernames"],
+      "pwnCount": 12400000,
+      "description": "Compilation of credentials aggregated from multiple prior breaches, distributed on darknet forums.",
+      "isVerified": false,
+      "isFabricated": false,
+      "isSensitive": false
+    }
+  ]
+}

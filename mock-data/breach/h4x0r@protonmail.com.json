@@ -1,0 +1,61 @@
+{
+  "email": "h4x0r@protonmail.com",
+  "breachCount": 4,
+  "pasteCount": 7,
+  "exposedPasswords": true,
+  "exposedFinancial": false,
+  "breaches": [
+    {
+      "name": "ExfilForumDB",
+      "title": "Exfil Underground Forum",
+      "domain": "exfil-forum.onion",
+      "breachDate": "2024-03-15",
+      "addedDate": "2024-04-02T00:00:00Z",
+      "dataClasses": ["Email addresses", "Usernames", "IP addresses", "Passwords"],
+      "pwnCount": 284721,
+      "description": "Underground hacking forum database exposed by rival threat actor. Contains member profiles, private messages, and credential data for 284k registered users.",
+      "isVerified": true,
+      "isFabricated": false,
+      "isSensitive": true
+    },
+    {
+      "name": "DarkLeaks2024",
+      "title": "DarkLeaks Compilation 2024",
+      "domain": "darkleaks.cc",
+      "breachDate": "2024-01-01",
+      "addedDate": "2024-01-18T00:00:00Z",
+      "dataClasses": ["Email addresses", "Passwords", "Usernames"],
+      "pwnCount": 12400000,
+      "description": "Compilation of credentials aggregated from multiple prior breaches, distributed on darknet forums.",
+      "isVerified": false,
+      "isFabricated": false,
+      "isSensitive": false
+    },
+    {
+      "name": "RansomGroupLeak",
+      "title": "RansomGroup Member List",
+      "domain": "rg-internal.onion",
+      "breachDate": "2023-11-20",
+      "addedDate": "2023-12-05T00:00:00Z",
+      "dataClasses": ["Email addresses", "Usernames", "Bitcoin addresses", "IP addresses"],
+      "pwnCount": 1847,
+      "description": "Internal member registry of a ransomware syndicate, leaked by law enforcement following infrastructure takedown.",
+      "isVerified": true,
+      "isFabricated": false,
+      "isSensitive": true
+    },
+    {
+      "name": "SteamDB2023",
+      "title": "Steam Community Database 2023",
+      "domain": "steampowered.com",
+      "breachDate": "2023-06-14",
+      "addedDate": "2023-07-01T00:00:00Z",
+      "dataClasses": ["Email addresses", "Usernames", "Passwords"],
+      "pwnCount": 5200000,
+      "description": "Gaming platform credential database exposed via SQL injection vulnerability.",
+      "isVerified": false,
+      "isFabricated": false,
+      "isSensitive": false
+    }
+  ]
+}

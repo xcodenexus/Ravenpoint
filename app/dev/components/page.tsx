@@ -89,13 +89,13 @@ export default function ComponentsPage() {
   const [inputVal,    setInputVal]    = useState('')
 
   function fireToast(variant: ToastVariant) {
-    const msgs: Record<ToastVariant, { title: string; message: string }> = {
-      default: { title: 'System',   message: 'Background scan queued.'         },
-      success: { title: 'Success',  message: 'Entity pivoted successfully.'     },
-      error:   { title: 'Error',    message: 'Connection to feed timed out.'    },
-      info:    { title: 'Info',     message: 'OSINT feed refreshed — 14 new.'  },
+    const msgs: Record<ToastVariant, string> = {
+      default: 'Background scan queued.',
+      success: 'Entity pivoted successfully.',
+      error:   'Connection to feed timed out.',
+      info:    'OSINT feed refreshed — 14 new.',
     }
-    toast({ variant, ...msgs[variant] })
+    toast(msgs[variant], variant)
   }
 
   return (
@@ -156,7 +156,7 @@ export default function ComponentsPage() {
           <Input
             value="bad-domain"
             onChange={() => {}}
-            error="Not a valid domain"
+            error
           />
         </Row>
       </Section>
@@ -205,10 +205,10 @@ export default function ComponentsPage() {
       {/* STAT BLOCK */}
       <Section title="StatBlock">
         <div className="flex gap-8 flex-wrap">
-          <StatBlock label="Entities"    value="1,284"  />
-          <StatBlock label="Threat Score" value="87"    unit="/100" delta="up" />
-          <StatBlock label="Feed Hits"   value="23"     delta="down" />
-          <StatBlock label="Pivot Depth" value="4"      unit="hops"  delta="neutral" />
+          <StatBlock label="Entities"     value="1,284" />
+          <StatBlock label="Threat Score" value="87"   unit="/100" delta={{ value: '+14%',  direction: 'up'      }} />
+          <StatBlock label="Feed Hits"    value="23"               delta={{ value: '−8',    direction: 'down'    }} />
+          <StatBlock label="Pivot Depth"  value="4"   unit="hops"  delta={{ value: '±0',    direction: 'neutral' }} />
         </div>
       </Section>
 
@@ -232,13 +232,13 @@ export default function ComponentsPage() {
       {/* TOOLTIP */}
       <Section title="Tooltip">
         <Row label="positions">
-          <Tooltip content="Pivot this entity" position="top">
+          <Tooltip content="Pivot this entity" side="top">
             <Button variant="secondary" size="sm">Top</Button>
           </Tooltip>
-          <Tooltip content="Export as JSON" position="right" shortcut={['⌘', 'E']}>
+          <Tooltip content="Export as JSON" side="right" shortcut="⌘+E">
             <Button variant="secondary" size="sm">Right + shortcut</Button>
           </Tooltip>
-          <Tooltip content="Delete permanently" position="bottom">
+          <Tooltip content="Delete permanently" side="bottom">
             <Button variant="danger" size="sm">Bottom</Button>
           </Tooltip>
         </Row>
@@ -275,9 +275,9 @@ export default function ComponentsPage() {
             <ThreatScore
               score={87}
               breakdown={[
-                { label: 'Malware',    value: 92 },
-                { label: 'Phishing',   value: 78 },
-                { label: 'Reputation', value: 91 },
+                { label: 'Malware',    contribution: 92 },
+                { label: 'Phishing',   contribution: 78 },
+                { label: 'Reputation', contribution: 91 },
               ]}
             />
           </div>
@@ -286,8 +286,8 @@ export default function ComponentsPage() {
           <ThreatScore score={42} orientation="vertical" />
           <ThreatScore score={87} orientation="vertical"
             breakdown={[
-              { label: 'Malware', value: 92 },
-              { label: 'Phishing', value: 80 },
+              { label: 'Malware', contribution: 92 },
+              { label: 'Phishing', contribution: 80 },
             ]}
           />
         </Row>
@@ -306,20 +306,18 @@ export default function ComponentsPage() {
           open={dialogOpen}
           onClose={() => setDialogOpen(false)}
           title="Confirm Entity Deletion"
-          size="sm"
-          footer={
-            <>
-              <Button variant="ghost"  onClick={() => setDialogOpen(false)}>Cancel</Button>
-              <Button variant="danger" onClick={() => { setDialogOpen(false); fireToast('error') }}>
-                Delete
-              </Button>
-            </>
-          }
+          maxWidth="sm"
         >
-          <p className="font-sans text-[13px] text-text-secondary leading-relaxed">
+          <p className="font-sans text-[13px] text-text-secondary leading-relaxed mb-4">
             Permanently remove <span className="font-mono text-text-primary">198.51.100.42</span> and
             all associated pivot data from this investigation? This action cannot be undone.
           </p>
+          <div className="flex justify-end gap-2">
+            <Button variant="ghost"  onClick={() => setDialogOpen(false)}>Cancel</Button>
+            <Button variant="danger" onClick={() => { setDialogOpen(false); fireToast('error') }}>
+              Delete
+            </Button>
+          </div>
         </Dialog>
       </Section>
 
@@ -342,17 +340,17 @@ export default function ComponentsPage() {
           onRowClick={row => fireToast('info')}
           actions={row => (
             <>
-              <Tooltip content="Copy" position="top">
+              <Tooltip content="Copy" side="top">
                 <button className="p-1 text-text-tertiary hover:text-text-primary transition-colors duration-[120ms]">
                   <Copy size={12} />
                 </button>
               </Tooltip>
-              <Tooltip content="Open" position="top">
+              <Tooltip content="Open" side="top">
                 <button className="p-1 text-text-tertiary hover:text-text-primary transition-colors duration-[120ms]">
                   <ExternalLink size={12} />
                 </button>
               </Tooltip>
-              <Tooltip content="Delete" position="top">
+              <Tooltip content="Delete" side="top">
                 <button className="p-1 text-text-tertiary hover:text-danger transition-colors duration-[120ms]">
                   <Trash2 size={12} />
                 </button>

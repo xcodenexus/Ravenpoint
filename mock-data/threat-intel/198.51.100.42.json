@@ -1,0 +1,41 @@
+{
+  "ipAddress": "198.51.100.42",
+  "isPublic": true,
+  "ipVersion": 4,
+  "isWhitelisted": false,
+  "abuseConfidenceScore": 87,
+  "countryCode": "RU",
+  "usageType": "Data Center/Web Hosting/Transit",
+  "isp": "VDSina Hosting",
+  "domain": "vdsina.ru",
+  "hostnames": ["198-51-100-42.vdsina.ru"],
+  "totalReports": 412,
+  "numDistinctUsers": 87,
+  "lastReportedAt": "2024-11-20T12:18:00Z",
+  "reports": [
+    {
+      "reportedAt": "2024-11-20T12:18:00Z",
+      "categories": [{ "id": 18, "name": "Brute-Force" }, { "id": 22, "name": "Hacking" }],
+      "comment": "Automated SSH brute-force attempts, 4000+ per hour. Persistent C2 traffic observed on 443/8443.",
+      "country": "DE"
+    },
+    {
+      "reportedAt": "2024-11-18T09:44:00Z",
+      "categories": [{ "id": 14, "name": "Port Scan" }, { "id": 22, "name": "Hacking" }],
+      "comment": "Mass port scanning followed by exploitation attempts on exposed RDP.",
+      "country": "NL"
+    },
+    {
+      "reportedAt": "2024-11-15T17:30:00Z",
+      "categories": [{ "id": 22, "name": "Hacking" }, { "id": 21, "name": "Web App Attack" }],
+      "comment": "Inbound C2 beacon traffic matching Cobalt Strike malleable profile. Blocked at perimeter.",
+      "country": "US"
+    },
+    {
+      "reportedAt": "2024-11-10T03:12:00Z",
+      "categories": [{ "id": 22, "name": "Hacking" }],
+      "comment": "Confirmed ransomware C2 infrastructure. IOC matches published threat intel report.",
+      "country": "GB"
+    }
+  ]
+}

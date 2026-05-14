@@ -1,0 +1,35 @@
+{
+  "ipAddress": "45.142.212.15",
+  "isPublic": true,
+  "ipVersion": 4,
+  "isWhitelisted": false,
+  "abuseConfidenceScore": 91,
+  "countryCode": "NL",
+  "usageType": "Data Center/Web Hosting/Transit",
+  "isp": "Serverius Holding B.V.",
+  "domain": "serverius.net",
+  "hostnames": ["c2-relay.serverius.net"],
+  "totalReports": 561,
+  "numDistinctUsers": 112,
+  "lastReportedAt": "2024-04-30T00:00:00Z",
+  "reports": [
+    {
+      "reportedAt": "2024-04-30T00:00:00Z",
+      "categories": [{ "id": 22, "name": "Hacking" }, { "id": 20, "name": "Exploited Host" }],
+      "comment": "C2 relay node for Cobalt Strike team server. Traffic redirected through this IP before reaching primary C2. Now offline.",
+      "country": "US"
+    },
+    {
+      "reportedAt": "2024-04-15T11:30:00Z",
+      "categories": [{ "id": 22, "name": "Hacking" }],
+      "comment": "VPN exit node used to obfuscate operator location. Multiple threat intel sources confirm C2 role.",
+      "country": "GB"
+    },
+    {
+      "reportedAt": "2024-03-20T08:00:00Z",
+      "categories": [{ "id": 18, "name": "Brute-Force" }, { "id": 22, "name": "Hacking" }],
+      "comment": "Initial access broker activity. Selling RDP access on underground forum.",
+      "country": "DE"
+    }
+  ]
+}

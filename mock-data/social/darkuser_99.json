@@ -1,0 +1,18 @@
+{
+  "username": "darkuser_99",
+  "scannedAt": "2024-11-19T20:15:00Z",
+  "matches": [
+    { "platform": "Telegram",     "url": "https://t.me/darkuser_99",                                       "status": "found",       "followers": 847,  "joinedAt": "2022-04-10T00:00:00Z", "bio": "OSINT | CyberSec | #privacy" },
+    { "platform": "GitHub",       "url": "https://github.com/darkuser_99",                               "status": "found",       "followers": 23,   "joinedAt": "2022-06-15T00:00:00Z", "bio": "Security researcher. Not affiliated with any groups." },
+    { "platform": "Twitter/X",    "url": null,                                                             "status": "not_found" },
+    { "platform": "Reddit",       "url": "https://reddit.com/u/darkuser_99",                             "status": "found",       "followers": 412,  "joinedAt": "2021-09-03T00:00:00Z" },
+    { "platform": "HackForums",   "url": "https://hackforums.net/member.php?action=profile&uid=982741",  "status": "found",       "joinedAt": "2022-04-12T00:00:00Z", "bio": "Elite member | 1,247 posts" },
+    { "platform": "RaidForums",   "url": null,                                                             "status": "found",       "joinedAt": "2021-08-20T00:00:00Z", "bio": "Verified member (archived)" },
+    { "platform": "BreachForums", "url": null,                                                             "status": "found",       "joinedAt": "2023-01-14T00:00:00Z", "bio": "Junior member" },
+    { "platform": "Instagram",    "url": null,                                                             "status": "not_found" },
+    { "platform": "LinkedIn",     "url": null,                                                             "status": "not_found" },
+    { "platform": "Discord",      "url": null,                                                             "status": "rate_limited" },
+    { "platform": "Steam",        "url": "https://steamcommunity.com/id/darkuser_99",                    "status": "found",       "joinedAt": "2019-11-05T00:00:00Z" },
+    { "platform": "Keybase",      "url": null,                                                             "status": "not_found" }
+  ]
+}

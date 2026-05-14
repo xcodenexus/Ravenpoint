@@ -1,0 +1,20 @@
+{
+  "domain": "darkmail.cc",
+  "registrar": "PDR Ltd. d/b/a PublicDomainRegistry.com",
+  "registeredAt": "2023-06-18T07:30:00Z",
+  "expiresAt": "2026-06-18T07:30:00Z",
+  "updatedAt": "2024-06-20T11:00:00Z",
+  "nameservers": ["ns1.darkmail.cc", "ns2.darkmail.cc"],
+  "registrantOrg": "Privacy Shield LLC",
+  "registrantCountry": "SC",
+  "dnssec": false,
+  "status": ["clientTransferProhibited"],
+  "history": [
+    {
+      "date": "2023-06-18T07:30:00Z",
+      "registrar": "PDR Ltd. d/b/a PublicDomainRegistry.com",
+      "registrantOrg": "Privacy Shield LLC",
+      "nameservers": ["ns1.darkmail.cc", "ns2.darkmail.cc"]
+    }
+  ]
+}

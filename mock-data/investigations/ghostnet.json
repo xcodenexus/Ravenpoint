@@ -1,0 +1,73 @@
+{
+  "id": "ghostnet",
+  "name": "Op: Ghostnet",
+  "description": "Investigation into suspected APT infrastructure using RU-hosted bulletproof hosting. Primary IOC: exfil-c2.ru. Linked to LockerX ransomware campaign.",
+  "createdAt": "2024-11-15T09:00:00Z",
+  "updatedAt": "2024-11-20T14:30:00Z",
+  "status": "active",
+  "tags": ["ransomware", "apt", "russia", "c2", "bitcoin"],
+  "maxThreatScore": 94,
+  "notes": "## Summary\n\nInitial IOC `exfil-c2.ru` identified via honeypot beacon on 2024-11-15. Domain registered 2024-01-12 via Reg.ru using ProtonMail address `h4x0r@protonmail.com`.\n\n## Key Findings\n\n- **Infrastructure**: Domain resolves to `198.51.100.42` (VDSina AS204720, RU). Previously hosted on `45.142.212.15` (Serverius NL) until April 2024.\n- **Pivot**: `malware-drop.net` co-hosted on same ASN, registered by alias email `admin@darkmail.cc`.\n- **Actor**: Forum user `darkuser_99` attributed via darkweb correlation. Wallet `bc1qxy2kgdygjrs6...` received confirmed ransom payments totaling ~$270k USD.\n\n## Next Steps\n\n- [ ] Enumerate additional domains registered via `admin@darkmail.cc`\n- [ ] Trace wallet mixing chain\n- [ ] Search cert transparency for wildcard subdomains",
+  "entities": [
+    {
+      "entity": { "type": "domain",   "value": "exfil-c2.ru",                                  "threatScore": 94, "firstSeen": "2024-01-15T00:00:00Z", "lastSeen": "2024-11-20T14:30:00Z", "tags": ["c2", "malware", "ru-tld"] },
+      "addedAt": "2024-11-15T09:00:00Z",
+      "notes": "Primary IOC. Confirmed C2 server.",
+      "pinned": true
+    },
+    {
+      "entity": { "type": "ip",       "value": "198.51.100.42",                                "threatScore": 87, "firstSeen": "2024-01-18T00:00:00Z", "lastSeen": "2024-11-20T14:30:00Z", "tags": ["bulletproof-hosting", "c2"] },
+      "addedAt": "2024-11-15T09:15:00Z",
+      "notes": "Current host for exfil-c2.ru. 412 abuse reports.",
+      "pinned": true
+    },
+    {
+      "entity": { "type": "email",    "value": "h4x0r@protonmail.com",                         "threatScore": 55, "firstSeen": "2024-01-12T00:00:00Z", "lastSeen": "2024-11-18T22:05:00Z", "tags": ["registrant", "threat-actor"] },
+      "addedAt": "2024-11-15T10:00:00Z",
+      "notes": "WHOIS registrant. 4 breach appearances including ExfilForumDB.",
+      "pinned": false
+    },
+    {
+      "entity": { "type": "username", "value": "darkuser_99",                                  "threatScore": 62, "firstSeen": "2022-04-10T00:00:00Z", "lastSeen": "2024-11-19T20:15:00Z", "tags": ["forum-user", "threat-actor"] },
+      "addedAt": "2024-11-16T14:30:00Z",
+      "notes": "Linked to h4x0r@protonmail.com via forum registration data.",
+      "pinned": false
+    },
+    {
+      "entity": { "type": "wallet",   "value": "bc1qxy2kgdygjrs6elezzfpiqe9temjsg5ybfqlyr8", "threatScore": 72, "firstSeen": "2024-03-01T00:00:00Z", "lastSeen": "2024-11-10T04:22:00Z", "tags": ["bitcoin", "ransom-payment"] },
+      "addedAt": "2024-11-17T11:00:00Z",
+      "notes": "$187.5k current balance. Received confirmed ransom payments from LockerX victims.",
+      "pinned": true
+    }
+  ],
+  "graph": {
+    "investigationId": "ghostnet",
+    "nodes": [
+      { "id": "domain-exfil-c2.ru",         "type": "domain",   "value": "exfil-c2.ru",                                  "threatScore": 94, "x": 400, "y": 200 },
+      { "id": "ip-198.51.100.42",           "type": "ip",       "value": "198.51.100.42",                                "threatScore": 87, "x": 600, "y": 100 },
+      { "id": "ip-203.0.113.77",            "type": "ip",       "value": "203.0.113.77",                                 "threatScore": 83, "x": 650, "y": 350 },
+      { "id": "ip-45.142.212.15",           "type": "ip",       "value": "45.142.212.15",                                "threatScore": 91, "x": 200, "y": 100 },
+      { "id": "domain-malware-drop.net",    "type": "domain",   "value": "malware-drop.net",                             "threatScore": 78, "x": 500, "y": 400 },
+      { "id": "domain-darkmail.cc",         "type": "domain",   "value": "darkmail.cc",                                  "threatScore": 41, "x": 150, "y": 450 },
+      { "id": "email-h4x0r",               "type": "email",    "value": "h4x0r@protonmail.com",                         "threatScore": 55, "x": 250, "y": 300 },
+      { "id": "email-admin",               "type": "email",    "value": "admin@darkmail.cc",                             "threatScore": 45, "x": 100, "y": 300 },
+      { "id": "username-darkuser_99",       "type": "username", "value": "darkuser_99",                                  "threatScore": 62, "x": 250, "y": 500 },
+      { "id": "username-malw4re_k1ng",      "type": "username", "value": "malw4re_k1ng",                                 "threatScore": 58, "x": 100, "y": 550 },
+      { "id": "wallet-bc1qxy2kgdygjrs6",    "type": "wallet",   "value": "bc1qxy2kgdygjrs6elezzfpiqe9temjsg5ybfqlyr8", "threatScore": 72, "x": 400, "y": 600 }
+    ],
+    "edges": [
+      { "id": "e1",  "source": "domain-exfil-c2.ru",      "target": "ip-198.51.100.42",        "relation": "resolves_to",    "confidence": 100, "label": "A record (current)"      },
+      { "id": "e2",  "source": "domain-exfil-c2.ru",      "target": "ip-45.142.212.15",        "relation": "historical_host","confidence": 92,  "label": "Historical A (Apr 2024)" },
+      { "id": "e3",  "source": "domain-exfil-c2.ru",      "target": "email-h4x0r",             "relation": "registered_by",  "confidence": 95,  "label": "WHOIS registrant"        },
+      { "id": "e4",  "source": "domain-exfil-c2.ru",      "target": "domain-malware-drop.net", "relation": "co_hosted",      "confidence": 88,  "label": "Same ASN / nameservers"  },
+      { "id": "e5",  "source": "ip-198.51.100.42",        "target": "ip-203.0.113.77",         "relation": "same_asn",       "confidence": 85,  "label": "AS204720 VDSina"         },
+      { "id": "e6",  "source": "domain-malware-drop.net", "target": "ip-203.0.113.77",         "relation": "resolves_to",    "confidence": 100, "label": "A record (current)"      },
+      { "id": "e7",  "source": "domain-malware-drop.net", "target": "email-admin",             "relation": "registered_by",  "confidence": 90,  "label": "WHOIS registrant"        },
+      { "id": "e8",  "source": "email-h4x0r",             "target": "email-admin",             "relation": "alias_of",       "confidence": 75,  "label": "Breach correlation"      },
+      { "id": "e9",  "source": "username-darkuser_99",    "target": "email-h4x0r",             "relation": "linked_to",       "confidence": 70,  "label": "Forum profile"           },
+      { "id": "e10", "source": "username-darkuser_99",    "target": "username-malw4re_k1ng",   "relation": "linked_to",       "confidence": 65,  "label": "Shared posting patterns" },
+      { "id": "e11", "source": "wallet-bc1qxy2kgdygjrs6", "target": "username-darkuser_99",   "relation": "owned_by",        "confidence": 80,  "label": "Forum attribution"       },
+      { "id": "e12", "source": "email-admin",             "target": "domain-darkmail.cc",      "relation": "hosts",           "confidence": 95,  "label": "Email domain"            }
+    ]
+  }
+}

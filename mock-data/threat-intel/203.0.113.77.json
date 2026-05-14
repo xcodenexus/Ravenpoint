@@ -1,0 +1,35 @@
+{
+  "ipAddress": "203.0.113.77",
+  "isPublic": true,
+  "ipVersion": 4,
+  "isWhitelisted": false,
+  "abuseConfidenceScore": 83,
+  "countryCode": "RU",
+  "usageType": "Data Center/Web Hosting/Transit",
+  "isp": "VDSina Hosting",
+  "domain": "vdsina.ru",
+  "hostnames": [],
+  "totalReports": 318,
+  "numDistinctUsers": 61,
+  "lastReportedAt": "2024-11-19T08:55:00Z",
+  "reports": [
+    {
+      "reportedAt": "2024-11-19T08:55:00Z",
+      "categories": [{ "id": 20, "name": "Exploited Host" }, { "id": 22, "name": "Hacking" }],
+      "comment": "Serving malware payload via HTTP on port 80. URL pattern matches known dropper infrastructure.",
+      "country": "FR"
+    },
+    {
+      "reportedAt": "2024-11-17T14:22:00Z",
+      "categories": [{ "id": 22, "name": "Hacking" }, { "id": 18, "name": "Brute-Force" }],
+      "comment": "Credential stuffing attacks against multiple SaaS login pages.",
+      "country": "US"
+    },
+    {
+      "reportedAt": "2024-11-12T22:10:00Z",
+      "categories": [{ "id": 14, "name": "Port Scan" }],
+      "comment": "Aggressive scanning of RFC 1918 ranges via port 445 (SMB).",
+      "country": "CA"
+    }
+  ]
+}

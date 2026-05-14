@@ -1,0 +1,13 @@
+{
+  "domain": "exfil-c2.ru",
+  "resolvedAt": "2024-11-20T14:30:00Z",
+  "records": [
+    { "type": "A",   "value": "198.51.100.42",                            "ttl": 300,   "firstSeen": "2024-01-18T00:00:00Z", "lastSeen": "2024-11-20T14:30:00Z" },
+    { "type": "A",   "value": "45.142.212.15",                            "ttl": 300,   "firstSeen": "2023-09-01T00:00:00Z", "lastSeen": "2024-04-30T00:00:00Z" },
+    { "type": "NS",  "value": "ns1.vdsina.ru",                            "ttl": 86400  },
+    { "type": "NS",  "value": "ns2.vdsina.ru",                            "ttl": 86400  },
+    { "type": "MX",  "value": "mail.exfil-c2.ru",                         "ttl": 3600,  "priority": 10 },
+    { "type": "TXT", "value": "v=spf1 ip4:198.51.100.42 ~all",            "ttl": 3600   },
+    { "type": "SOA", "value": "ns1.vdsina.ru. hostmaster.vdsina.ru. 2024011201 3600 900 604800 300", "ttl": 86400 }
+  ]
+}

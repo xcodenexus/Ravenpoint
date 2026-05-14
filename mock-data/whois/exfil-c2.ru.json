@@ -1,0 +1,20 @@
+{
+  "domain": "exfil-c2.ru",
+  "registrar": "Reg.ru LLC",
+  "registeredAt": "2024-01-12T11:04:22Z",
+  "expiresAt": "2025-01-12T11:04:22Z",
+  "updatedAt": "2024-01-13T08:17:55Z",
+  "nameservers": ["ns1.vdsina.ru", "ns2.vdsina.ru"],
+  "registrantOrg": null,
+  "registrantCountry": "RU",
+  "dnssec": false,
+  "status": ["clientTransferProhibited"],
+  "history": [
+    {
+      "date": "2024-01-12T11:04:22Z",
+      "registrar": "Reg.ru LLC",
+      "registrantOrg": null,
+      "nameservers": ["ns1.vdsina.ru", "ns2.vdsina.ru"]
+    }
+  ]
+}

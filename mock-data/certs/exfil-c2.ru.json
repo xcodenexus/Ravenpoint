@@ -1,0 +1,35 @@
+{
+  "domain": "exfil-c2.ru",
+  "certs": [
+    {
+      "id": 12847293,
+      "commonName": "exfil-c2.ru",
+      "issuer": "R10, Let's Encrypt",
+      "notBefore": "2024-10-15T00:00:00Z",
+      "notAfter": "2025-01-13T00:00:00Z",
+      "sans": ["exfil-c2.ru", "www.exfil-c2.ru", "mail.exfil-c2.ru", "api.exfil-c2.ru"],
+      "serialNumber": "03a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5",
+      "fingerprint": "A1:B2:C3:D4:E5:F6:A7:B8:C9:D0:E1:F2:A3:B4:C5:D6:E7:F8:A9:B0:C1:D2:E3:F4:A5:B6:C7:D8:E9:F0:A1:B2"
+    },
+    {
+      "id": 11203847,
+      "commonName": "exfil-c2.ru",
+      "issuer": "R10, Let's Encrypt",
+      "notBefore": "2024-07-15T00:00:00Z",
+      "notAfter": "2024-10-13T00:00:00Z",
+      "sans": ["exfil-c2.ru", "www.exfil-c2.ru"],
+      "serialNumber": "01f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6",
+      "fingerprint": "B2:C3:D4:E5:F6:A7:B8:C9:D0:E1:F2:A3:B4:C5:D6:E7:F8:A9:B0:C1:D2:E3:F4:A5:B6:C7:D8:E9:F0:A1:B2:C3"
+    },
+    {
+      "id": 9847362,
+      "commonName": "exfil-c2.ru",
+      "issuer": "R10, Let's Encrypt",
+      "notBefore": "2024-04-15T00:00:00Z",
+      "notAfter": "2024-07-14T00:00:00Z",
+      "sans": ["exfil-c2.ru", "www.exfil-c2.ru", "panel.exfil-c2.ru"],
+      "serialNumber": "02e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7",
+      "fingerprint": "C3:D4:E5:F6:A7:B8:C9:D0:E1:F2:A3:B4:C5:D6:E7:F8:A9:B0:C1:D2:E3:F4:A5:B6:C7:D8:E9:F0:A1:B2:C3:D4"
+    }
+  ]
+}
