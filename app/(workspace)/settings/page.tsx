@@ -101,6 +101,50 @@ function ShortcutsTab() {
   )
 }
 
+const GUIDE_SECTIONS = [
+  {
+    title: 'What is Ravenpoint?',
+    body: 'Ravenpoint is a threat intelligence workspace for solo investigators. Create an Investigation — a named case — then add entities (IPs, domains, emails, usernames, crypto wallets). The platform enriches each entity with OSINT data from multiple sources and lets you trace connections between them.',
+  },
+  {
+    title: 'Entity types',
+    body: 'Five entity types are supported: IP addresses (e.g. 94.102.49.193), Domains (e.g. exfil-c2.ru), Email addresses, Usernames, and Crypto wallet addresses. Each type has its own enrichment tabs — infrastructure data for IPs/domains, exposure data for emails, social footprint for usernames, on-chain activity for wallets.',
+  },
+  {
+    title: 'Starting an investigation',
+    body: 'Go to Sessions from the sidebar. Each card is a named investigation with a threat score, status, and entity count. Click a session to open the workspace. Inside you\'ll find the Entities tab (sorted by threat score), Graph (force-graph of connections), Timeline (edge history), and Notes (freeform markdown).',
+  },
+  {
+    title: 'Pivoting between entities',
+    body: 'On any entity profile, the Overview tab shows connected entities from your investigations. Click any connection to jump to that entity\'s profile. Use ⌘K to search across all entities and investigations, or click a node in the graph to open the node panel and navigate to the entity page.',
+  },
+  {
+    title: 'Using the AI Analyst',
+    body: 'Press ⌘J or click Analyst in the top bar to open the streaming panel. Choose a mode: Summarise (threat summary), Pivots (suggested next steps), or Report (full structured report). The analyst reads the current page context. An ANTHROPIC_API_KEY must be configured in Settings → API Keys.',
+  },
+  {
+    title: 'Graph view',
+    body: 'Each investigation has an embedded graph on the Graph tab. Click "Open full graph view" to expand to the full canvas. Nodes are color-coded by entity type and sized by threat score. Click any node to open the side panel, which links to the entity profile. Scroll to zoom, drag to pan.',
+  },
+  {
+    title: 'Command palette',
+    body: 'Press ⌘K from anywhere to open the command palette. It searches across all entities, investigations, and app actions in real time. Use arrow keys or j/k to navigate, Enter to select, Esc to close.',
+  },
+]
+
+function GuideTab() {
+  return (
+    <div className="flex flex-col gap-8 max-w-xl">
+      {GUIDE_SECTIONS.map(({ title, body }) => (
+        <div key={title} className="flex flex-col gap-2">
+          <span className="font-mono text-[12px] text-text-primary">{title}</span>
+          <p className="font-sans text-[13px] text-text-secondary leading-relaxed">{body}</p>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 function AboutTab() {
   return (
     <div className="flex flex-col gap-4 max-w-md">
@@ -121,7 +165,7 @@ function AboutTab() {
 }
 
 export default function SettingsPage() {
-  const [tab, setTab] = useState('api-keys')
+  const [tab, setTab] = useState('guide')
 
   return (
     <div className="px-8 py-8 max-w-3xl">
@@ -134,6 +178,7 @@ export default function SettingsPage() {
 
       <Tabs
         items={[
+          { value: 'guide',        label: 'Guide'              },
           { value: 'api-keys',     label: 'API Keys'           },
           { value: 'data-sources', label: 'Data Sources'       },
           { value: 'shortcuts',    label: 'Keyboard Shortcuts' },
@@ -144,6 +189,7 @@ export default function SettingsPage() {
       />
 
       <div className="mt-6">
+        {tab === 'guide'        && <GuideTab />}
         {tab === 'api-keys'     && <ApiKeysTab />}
         {tab === 'data-sources' && <DataSourcesTab />}
         {tab === 'shortcuts'    && <ShortcutsTab />}
