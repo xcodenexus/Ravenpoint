@@ -258,13 +258,13 @@ export default function ComponentsPage() {
       {/* ENTITY CHIP */}
       <Section title="EntityChip">
         <Row label="types">
-          <EntityChip type="ip"       value="198.51.100.42"      onPivot={v => fireToast('info')} />
-          <EntityChip type="domain"   value="exfil-c2.ru"        onPivot={v => fireToast('info')} />
-          <EntityChip type="email"    value="h4x0r@proton.me"    onPivot={v => fireToast('info')} />
+          <EntityChip type="ip"       value="198.51.100.42"      onPivot={() => fireToast('info')} />
+          <EntityChip type="domain"   value="exfil-c2.ru"        onPivot={() => fireToast('info')} />
+          <EntityChip type="email"    value="h4x0r@proton.me"    onPivot={() => fireToast('info')} />
         </Row>
         <Row label="more">
-          <EntityChip type="wallet"   value="bc1qxy2kgdygjrs6"   onPivot={v => fireToast('info')} />
-          <EntityChip type="username" value="darkuser_99"         onPivot={v => fireToast('info')} />
+          <EntityChip type="wallet"   value="bc1qxy2kgdygjrs6"   onPivot={() => fireToast('info')} />
+          <EntityChip type="username" value="darkuser_99"         onPivot={() => fireToast('info')} />
         </Row>
       </Section>
 
@@ -337,8 +337,8 @@ export default function ComponentsPage() {
           columns={TABLE_COLS}
           rows={TABLE_ROWS}
           keyField="id"
-          onRowClick={row => fireToast('info')}
-          actions={row => (
+          onRowClick={() => fireToast('info')}
+          actions={() => (
             <>
               <Tooltip content="Copy" side="top">
                 <button className="p-1 text-text-tertiary hover:text-text-primary transition-colors duration-[120ms]">

@@ -55,10 +55,8 @@ export default function EntityPage() {
   const { data: onchain,     isLoading: loadingOnchain }     = useOnchain(isWallet  ? decoded : null)
   const { data: investigations }                             = useInvestigations()
 
-  const { related, investigationId } = useMemo<{
-    related: RelatedEntity[]
-    investigationId: string | null
-  }>(() => {
+  // eslint-disable-next-line react-hooks/preserve-manual-memoization
+  const { related, investigationId } = useMemo(() => {
     if (!investigations || !entity) return { related: [], investigationId: null }
 
     for (const inv of investigations) {

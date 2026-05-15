@@ -55,10 +55,12 @@ export function CommandPalette({
     )
   }, [items, query])
 
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { setActiveIdx(0) }, [filtered.length])
 
   useEffect(() => {
     if (open) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setQuery('')
       setActiveIdx(0)
       requestAnimationFrame(() => inputRef.current?.focus())
